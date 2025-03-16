@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
@@ -22,7 +23,10 @@ const nextConfig = {
         hostname: 'static.vecteezy.com',
       },
     ],
+    unoptimized: true
   },
+  trailingSlash: false,
+  poweredByHeader: false
 };
 
 module.exports = nextConfig; 
