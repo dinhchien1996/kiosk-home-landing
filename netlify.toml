@@ -17,7 +17,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.vecteezy.com *.same-assets.com *.chuyendoisovn.info; img-src 'self' data: blob: *.vecteezy.com *.same-assets.com *.chuyendoisovn.info; font-src 'self' data: fonts.gstatic.com;"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://ytedongthap.vn; img-src 'self' data: blob: https://ytedongthap.vn; font-src 'self' data: fonts.gstatic.com;"
 
 [[redirects]]
   from = "/*"
