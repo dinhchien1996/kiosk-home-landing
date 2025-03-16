@@ -107,7 +107,7 @@ const FeaturesSection = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
                 <Image
-                  src="https://ext.same-assets.com/1024400269/2350533331.webp"
+                  src="https://ytedongthap.vn/assets/landing/images/phone_2.png"
                   alt="FPT.SmartKiosk App"
                   width={200}
                   height={400}

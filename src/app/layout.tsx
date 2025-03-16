@@ -27,19 +27,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="vi" className={`${jakartaSans.variable}`} suppressHydrationWarning>
-      <LanguageProvider>
-        <ClientBody>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-          <Toaster richColors position="top-right" />
-        </ClientBody>
-      </LanguageProvider>
+      <body>
+        <LanguageProvider>
+          <ClientBody>
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+            <Toaster richColors position="top-right" />
+          </ClientBody>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

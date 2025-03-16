@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { format, addDays, isBefore, startOfToday, isWeekend } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import { Calendar, Clock, User, CalendarClock } from 'lucide-react';
-import { TimeSlotPicker, type AvailableTimeSlot } from './TimeSlotPicker';
+import { type AvailableTimeSlot } from './TimeSlotPicker';
 import { AppointmentDialog, PatientInfo } from './AppointmentDialog';
 
 // Current available departments for appointments
@@ -248,11 +248,24 @@ const AppointmentCalendar = ({
 
             {/* Time Slots */}
             {selectedDate && (
-              <TimeSlotPicker
-                slots={availableTimeSlots}
-                selectedSlot={selectedTimeSlot}
-                onSelectTimeSlot={handleTimeSlotSelect}
-              />
+              <div className="space-y-4">
+                <p className="text-sm font-medium">Chọn giờ khám</p>
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                  {availableTimeSlots.map((slot) => (
+                    <button
+                      key={slot.id}
+                      className={`p-2 text-sm rounded-md border transition-colors
+                        ${selectedTimeSlot === slot 
+                          ? 'bg-primary text-white border-primary' 
+                          : 'border-gray-300 hover:border-primary'
+                        }`}
+                      onClick={() => handleTimeSlotSelect(slot)}
+                    >
+                      {slot.time}
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
 
             {/* Book Appointment Button */}
